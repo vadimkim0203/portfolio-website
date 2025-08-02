@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 import { useEffect, useState } from 'react';
@@ -7,7 +8,7 @@ function Header() {
   const TABS = [
     { name: 'Home', link: '/' },
     { name: 'Projects', link: '/projects' },
-    { name: 'Publications', link: '/publications' },
+    { name: 'Activities', link: '/activities' },
     { name: 'Contact', link: '/contact' },
   ];
   const [mounted, setMounted] = useState(false);

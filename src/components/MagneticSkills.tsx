@@ -1,6 +1,5 @@
 import { SKILLS } from '@/app/data';
 import { Magnetic } from './ui/magnetic';
-import { ReactNode } from 'react';
 import StackIcon from 'tech-stack-icons';
 
 export default function MagneticSkills() {
