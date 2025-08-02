@@ -1,14 +1,14 @@
-"use client";
-import Link from "next/link";
-import ThemeSwitch from "./ThemeSwitch";
-import { useEffect, useState } from "react";
+'use client';
+import Link from 'next/link';
+import ThemeSwitch from './ThemeSwitch';
+import { useEffect, useState } from 'react';
 
 function Header() {
   const TABS = [
-    { name: "Home", link: "/" },
-    { name: "Projects", link: "/projects" },
-    { name: "Publications", link: "/publications" },
-    { name: "Contact", link: "/contact" },
+    { name: 'Home', link: '/' },
+    { name: 'Projects', link: '/projects' },
+    { name: 'Publications', link: '/publications' },
+    { name: 'Contact', link: '/contact' },
   ];
   const [mounted, setMounted] = useState(false);
 
@@ -17,7 +17,9 @@ function Header() {
   }, []);
   return (
     <header className="flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
-      <div className="font-medium text-black dark:text-white">azatkariuly</div>
+      <div className="font-bold text-black text-2xl dark:text-white">
+        <Link href="/">VADIM KIM</Link>
+      </div>
       {mounted && (
         <div className="flex items-center gap-4">
           {TABS.map((tab, index) => (

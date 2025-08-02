@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import { AnimatedBackground } from "@/components/ui/animated-background";
-import { BLOG_POSTS } from "@/app/data";
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import Link from 'next/link';
+import { AnimatedBackground } from '@/components/ui/animated-background';
+import { BLOG_POSTS } from '@/app/data';
 
-import { TransitionPanel } from "@/components/ui/transition-panel";
+import { TransitionPanel } from '@/components/ui/transition-panel';
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -19,8 +19,8 @@ const VARIANTS_CONTAINER = {
 };
 
 const VARIANTS_SECTION = {
-  hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
 };
 
 const TRANSITION_SECTION = {
@@ -28,7 +28,6 @@ const TRANSITION_SECTION = {
 };
 
 function Projects() {
-
   return (
     <motion.main
       className="space-y-24"
@@ -48,7 +47,7 @@ function Projects() {
             enableHover
             className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
             transition={{
-              type: "spring",
+              type: 'spring',
               bounce: 0,
               duration: 0.2,
             }}
@@ -56,6 +55,8 @@ function Projects() {
             {BLOG_POSTS.map((post) => (
               <Link
                 key={post.uid}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="-mx-3 rounded-xl px-3 py-3"
                 href={post.link}
                 data-id={post.uid}

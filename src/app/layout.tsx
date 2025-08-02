@@ -1,30 +1,30 @@
-import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import type { Metadata, Viewport } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
+import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: '#ffffff',
 };
 
 const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
+  variable: '--font-geist',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Azat Azamat - Personal website",
+  title: 'Vadim Kim - CV',
   description:
-    "Personal website of Azat Azamat, a software engineer, writer, and creator.",
+    "Explore Vadim Kim's portfolio and CV. Passionate about clean code, UI design, and building modern web applications.",
 };
 
 export default function RootLayout({

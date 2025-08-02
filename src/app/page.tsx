@@ -1,21 +1,23 @@
-"use client";
-import { motion } from "motion/react";
-import { Spotlight } from "@/components/ui/spotlight";
-import { Magnetic } from "@/components/ui/magnetic";
+'use client';
+import { motion } from 'motion/react';
+import { Spotlight } from '@/components/ui/spotlight';
+import { Magnetic } from '@/components/ui/magnetic';
 import {
   MorphingDialog,
   MorphingDialogTrigger,
-} from "@/components/ui/morphing-dialog";
+} from '@/components/ui/morphing-dialog';
 import {
   PROJECTS,
   WORK_EXPERIENCE,
   SOCIAL_LINKS,
   SKILLS,
   EDUCATION,
-} from "./data";
-import { TextEffect } from "@/components/ui/text-effect";
-import Image from "next/image";
-import Link from "next/link";
+} from './data';
+import { TextEffect } from '@/components/ui/text-effect';
+import Image from 'next/image';
+import Link from 'next/link';
+import MagneticSocialLink from '@/components/MagneticSocialLink';
+import MagneticSkills from '@/components/MagneticSkills';
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -28,8 +30,8 @@ const VARIANTS_CONTAINER = {
 };
 
 const VARIANTS_SECTION = {
-  hidden: { opacity: 0, y: 10, filter: "blur(8px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+  hidden: { opacity: 0, y: 10, filter: 'blur(8px)' },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
 };
 
 const TRANSITION_SECTION = {
@@ -44,7 +46,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
   return (
     <MorphingDialog
       transition={{
-        type: "spring",
+        type: 'spring',
         bounce: 0,
         duration: 0.3,
       }}
@@ -86,40 +88,6 @@ function ProjectVideo({ src }: ProjectVideoProps) {
   );
 }
 
-function MagneticSocialLink({
-  children,
-  link,
-}: {
-  children: React.ReactNode;
-  link: string;
-}) {
-  return (
-    <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
-      <a
-        href={link}
-        className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
-      >
-        {children}
-        <svg
-          width="15"
-          height="15"
-          viewBox="0 0 15 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-3 w-3"
-        >
-          <path
-            d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
-            fill="currentColor"
-            fillRule="evenodd"
-            clipRule="evenodd"
-          ></path>
-        </svg>
-      </a>
-    </Magnetic>
-  );
-}
-
 export default function Home() {
   return (
     <motion.main
@@ -134,18 +102,18 @@ export default function Home() {
       >
         <div className="flex flex-col items-center pt-10">
           <div className="flex flex-col items-center justify-center">
-            <div>
+            <div className="mx-auto my-5 block rounded-full aspect-square w-[160px] h-[160px] overflow-hidden">
               <Image
                 src="/images/avatar.jpg"
                 alt="Profile photo"
-                className="mx-auto my-5 block rounded-full bg-gray-100 grayscale hover:grayscale-0 sm:float-right"
+                className="w-full h-full object-cover rounded-full bg-gray-100 grayscale hover:grayscale-0 sm:float-right"
                 unoptimized
                 width={160}
                 height={160}
                 priority
               />
             </div>
-            <h1 className="text-2xl font-medium tracking-tight">Azat Azamat</h1>
+            <h1 className="text-2xl font-medium tracking-tight">Vadim Kim</h1>
             <TextEffect
               as="p"
               preset="fade"
@@ -153,12 +121,16 @@ export default function Home() {
               className="pt-1 text-zinc-600 dark:text-zinc-500"
               delay={0.5}
             >
-              AI Engineer & Computer Vision
+              Frontend Engineer
             </TextEffect>
           </div>
           <div className="mt-4 flex items-center justify-start space-x-3">
             {SOCIAL_LINKS.map((link) => (
-              <MagneticSocialLink key={link.label} link={link.link}>
+              <MagneticSocialLink
+                key={link.label}
+                link={link.link}
+                icon={link.icon}
+              >
                 {link.label}
               </MagneticSocialLink>
             ))}
@@ -166,14 +138,12 @@ export default function Home() {
         </div>
 
         <div className="mt-10 flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">Hey there! 👋</p>
+          <p className="text-zinc-600 dark:text-zinc-400">Hi there!</p>
           <p className="pt-4 text-zinc-600 dark:text-zinc-400">
-            Originally from Kazakhstan and now based in Seoul. I hold an M.Sc in
-            Computer Science and am passionate about leveraging technology to
-            solve complex problems. My journey across cultures has shaped me
-            into a versatile professional. I enjoy tackling complex problems,
-            building innovative solutions, and continuously expanding my
-            knowledge.
+            I'm Vadim — a frontend developer with a background in retail and B2B
+            services. I’m experienced in understanding user needs, solving
+            real-world problems, and building practical, user-friendly
+            solutions. My main tools are TypeScript, Next.js, and Tailwind CSS.
           </p>
         </div>
       </motion.section>
@@ -269,7 +239,7 @@ export default function Home() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+        <h3 className="mb-5 text-lg font-medium">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
@@ -317,18 +287,7 @@ export default function Home() {
           ))}
         </InfiniteSlider> */}
 
-        <div className="mt-4 flex h-fit flex-wrap items-center justify-center gap-2">
-          {SKILLS.map((skill) => (
-            <Magnetic key={skill.name} springOptions={{ bounce: 0.1 }}>
-              <button
-                type="button"
-                className="inline-flex items-center rounded-md border border-zinc-100 bg-transparent px-4 py-2 text-sm text-zinc-950 transition-all duration-300 hover:bg-zinc-100 dark:border-zinc-900 dark:bg-transparent dark:text-zinc-50 dark:hover:bg-zinc-600"
-              >
-                {skill.name}
-              </button>
-            </Magnetic>
-          ))}
-        </div>
+        <MagneticSkills />
       </motion.section>
     </motion.main>
   );
