@@ -85,7 +85,7 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className="text-2xl font-medium tracking-tight">Vadim Kim</h1>
+            <h1 className="text-2xl font-medium tracking-tight">{t('name')}</h1>
             <TextEffect
               as="p"
               preset="fade"
@@ -110,14 +110,9 @@ export default function Home() {
         </div>
 
         <div className="mt-10 flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            {t('welcomeMessage')}Hi there!
-          </p>
+          <p className="text-zinc-600 dark:text-zinc-400">{t('greetings')}</p>
           <p className="pt-4 text-zinc-600 dark:text-zinc-400">
-            I'm Vadim — a frontend developer with a background in retail and B2B
-            services. I’m experienced in understanding user needs, solving
-            real-world problems, and building practical, user-friendly
-            solutions. My main tools are TypeScript, Next.js, and Tailwind CSS.
+            {t('introduction')}
           </p>
         </div>
       </motion.section>
@@ -126,7 +121,7 @@ export default function Home() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
+        <h3 className="mb-5 text-lg font-medium">{t('headerWork')}</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
             <a
@@ -169,7 +164,7 @@ export default function Home() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Education</h3>
+        <h3 className="mb-5 text-lg font-medium">{t('headerEducation')}</h3>
         <div className="flex flex-col space-y-2">
           {EDUCATION.map((university) => (
             <a
