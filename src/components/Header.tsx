@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 import { useEffect, useState } from 'react';
+import LanguageSwitch from './locale/LanguageSwitcher';
+import LanguageSwitcher from './locale/LanguageSwitcher';
 
 function Header() {
   const TABS = [
@@ -34,6 +36,7 @@ function Header() {
             </Link>
           ))}
           <ThemeSwitch />
+          <LanguageSwitcher />
         </div>
       )}
     </header>

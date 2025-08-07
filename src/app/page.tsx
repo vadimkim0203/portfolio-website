@@ -11,6 +11,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MagneticSocialLink from '@/components/MagneticSocialLink';
 import MagneticSkills from '@/components/MagneticSkills';
+import { useLanguage } from '@/context/LanguageContext';
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -58,6 +59,8 @@ function ProjectVideo({ src }: ProjectVideoProps) {
 }
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <motion.main
       className="space-y-24"
@@ -107,7 +110,9 @@ export default function Home() {
         </div>
 
         <div className="mt-10 flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">Hi there!</p>
+          <p className="text-zinc-600 dark:text-zinc-400">
+            {t('welcomeMessage')}Hi there!
+          </p>
           <p className="pt-4 text-zinc-600 dark:text-zinc-400">
             I'm Vadim — a frontend developer with a background in retail and B2B
             services. I’m experienced in understanding user needs, solving
