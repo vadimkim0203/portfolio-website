@@ -3,17 +3,19 @@
 import Link from 'next/link';
 import ThemeSwitch from './ThemeSwitch';
 import { useEffect, useState } from 'react';
-import LanguageSwitch from './locale/LanguageSwitcher';
 import LanguageSwitcher from './locale/LanguageSwitcher';
+import { useLanguage } from '@/context/LanguageContext';
 
 function Header() {
-  const TABS = [
-    { name: 'Home', link: '/' },
-    { name: 'Projects', link: '/projects' },
-    { name: 'Activities', link: '/activities' },
-    { name: 'Contact', link: '/contact' },
-  ];
   const [mounted, setMounted] = useState(false);
+  const { t, locale } = useLanguage();
+
+  const TABS = [
+    { nameKey: 'navigation.home', link: '/' },
+    { nameKey: 'navigation.projects', link: '/projects' },
+    { nameKey: 'navigation.activities', link: '/activities' },
+    { nameKey: 'navigation.contact', link: '/contact' },
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -32,7 +34,7 @@ function Header() {
               type="button"
               className="px-2 py-0.5 text-zinc-600 transition-colors duration-300 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
             >
-              {tab.name}
+              {t(tab.nameKey)}
             </Link>
           ))}
           <ThemeSwitch />

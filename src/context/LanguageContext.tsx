@@ -35,9 +35,15 @@ const translations: Translations = {
             real-world problems, and building practical, user-friendly
             solutions. My main tools are TypeScript, Next.js, and Tailwind CSS.`,
     headerWork: 'Work Experience',
-    headerEducation: 'Education'
+    headerEducation: 'Education',
+    headerProjects: 'Projects',
+    headerSkills: 'Skills',
+    allProjects: 'See all projects',
+    'navigation.home': 'Home',
+    'navigation.projects': 'Projects',
+    'navigation.activities': 'Activities',
+    'navigation.contact': 'Contact',
   },
-
   ko: {
     name: '김바딤',
     specialty: '프론트엔드 개발자',
@@ -46,7 +52,14 @@ const translations: Translations = {
 사용자 요구를 정확히 파악하고, 실질적인 문제를 해결하며, 실용적이고 사용자 중심적인 솔루션을 구축하는 데 강점을 가지고 있습니다.
 주요 사용 기술은 TypeScript, Next.js, Tailwind CSS입니다.`,
     headerWork: '경력 사항',
-    headerEducation: '학력 사항'
+    headerEducation: '학력 사항',
+    headerProjects: '프로젝트',
+    headerSkills: '기술 스택',
+    allProjects: '전체 프로젝트 보기',
+    'navigation.home': '홈',
+    'navigation.projects': '프로젝트',
+    'navigation.activities': '활동',
+    'navigation.contact': '연락처',
   },
 };
 

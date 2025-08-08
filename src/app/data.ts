@@ -8,22 +8,27 @@ type Project = {
   id: string;
 };
 
+type LocalizedString = {
+  en: string;
+  ko: string;
+};
+
 type WorkExperience = {
-  company: string;
-  title: string;
-  location: string;
-  start: string;
-  end: string;
+  company: LocalizedString;
+  title: LocalizedString;
+  location: LocalizedString;
+  start: LocalizedString;
+  end: LocalizedString;
   link: string;
   id: string;
 };
 
 type Education = {
-  name: string;
-  degree: string;
-  location: string;
-  start: string;
-  end: string;
+  name: LocalizedString;
+  degree: LocalizedString;
+  location: LocalizedString;
+  start: LocalizedString;
+  end: LocalizedString;
   link: string;
   id: string;
 };
@@ -77,38 +82,89 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'ThinkStorm',
-    title: 'Frontend engineer',
-    location: 'Seoul, South Korea',
-    start: 'Mar. 2025',
-    end: 'Present',
+    company: {
+      en: 'ThinkStorm',
+      ko: 'ThinkStorm',
+    },
+    title: {
+      en: 'Frontend engineer',
+      ko: '프론트엔드 개발자',
+    },
+    location: {
+      en: 'Seoul, South Korea',
+      ko: '서울, 대한민국',
+    },
+    start: {
+      en: 'Mar. 2025',
+      ko: '2025년 3월',
+    },
+    end: {
+      en: 'Present',
+      ko: '현재',
+    },
     link: 'https://thinkstorm.app/',
     id: 'work4',
   },
   {
-    company: 'Hinature (Purito Seoul)',
-    title: 'B2B Overseas Sales Manager',
-    location: 'Incheon, South Korea',
-    start: 'Jan. 2024',
-    end: 'Oct. 2024',
+    company: {
+      en: 'Hinature (Purito Seoul)',
+      ko: '하이네이처 (퓨리토 서울)',
+    },
+    title: {
+      en: 'B2B Overseas Sales Manager',
+      ko: 'B2B 해외 영업 매니저',
+    },
+    location: {
+      en: 'Incheon, South Korea',
+      ko: '인천, 대한민국',
+    },
+    start: {
+      en: 'Jan. 2024',
+      ko: '2024년 1월',
+    },
+    end: {
+      en: 'Oct. 2024',
+      ko: '2024년 10월',
+    },
     link: 'https://purito.com/',
     id: 'work3',
   },
   {
-    company: 'Dinso Holdings',
-    title: 'Export Manager',
-    location: 'Seoul, South Korea',
-    start: 'Jun. 2023',
-    end: 'Nov. 2023',
+    company: {
+      en: 'Dinso Holdings',
+      ko: '(주)딘소',
+    },
+    title: {
+      en: 'Export Manager',
+      ko: '수출 매니저',
+    },
+    location: { en: 'Seoul, South Korea', ko: '서울, 대한민국' },
+    start: { en: 'Jun. 2023', ko: '2023년 6월' },
+    end: { en: 'Nov. 2023', ko: '2023년 11월' },
     link: 'https://dinsokorea.com/',
     id: 'work2',
   },
   {
-    company: 'Uniqlo',
-    title: 'Store Manager',
-    location: 'Moscow, Russia',
-    start: 'Mar. 2016',
-    end: 'Oct. 2022',
+    company: {
+      en: 'Uniqlo',
+      ko: '유니클로',
+    },
+    title: {
+      en: 'Store Manager',
+      ko: '매장 관리자',
+    },
+    location: {
+      en: 'Moscow, Russia',
+      ko: '모스크바, 러시아',
+    },
+    start: {
+      en: 'Mar. 2016',
+      ko: '2016년 3월',
+    },
+    end: {
+      en: 'Oct. 2022',
+      ko: '2022년 10월',
+    },
     link: 'https://www.uniqlo.com/us/en/',
     id: 'work1',
   },
@@ -116,20 +172,50 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const EDUCATION: Education[] = [
   {
-    name: 'Moscow State University of Management',
-    degree: 'BSc in Political Science',
-    location: 'Moscow, Russia',
-    start: 'Sep 2014',
-    end: 'Jul 2018',
+    name: {
+      en: 'Moscow State University of Management',
+      ko: 'Moscow State University of Management',
+    },
+    degree: {
+      en: 'BSc in Political Science',
+      ko: '정치학 학사',
+    },
+    location: {
+      en: 'Moscow, Russia',
+      ko: '모스크바, 러시아',
+    },
+    start: {
+      en: 'Sep 2014',
+      ko: '2014년 9월',
+    },
+    end: {
+      en: 'Jul 2018',
+      ko: '2018년 7월',
+    },
     link: 'https://guu.ru/',
     id: 'education1',
   },
   {
-    name: 'Yandex EdTech',
-    degree: 'Web and Multimedia App Developer',
-    location: 'Remote',
-    start: 'Nov 2023',
-    end: 'May 2025',
+    name: {
+      en: 'Yandex EdTech',
+      ko: 'Yandex EdTech',
+    },
+    degree: {
+      en: 'Web and Multimedia App Developer',
+      ko: '웹 및 멀티미디어 앱 개발자',
+    },
+    location: {
+      en: 'Remote',
+      ko: '원격',
+    },
+    start: {
+      en: 'Nov 2023',
+      ko: '2023년 11월',
+    },
+    end: {
+      en: 'May 2025',
+      ko: '2025년 5월',
+    },
     link: 'https://practicum.yandex.com/',
     id: 'education2',
   },

@@ -59,7 +59,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
 }
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <motion.main
@@ -92,8 +92,9 @@ export default function Home() {
               per="char"
               className="pt-1 text-zinc-600 dark:text-zinc-500"
               delay={0.5}
+              key={`specialty=${t('specialty')}`}
             >
-              Frontend Engineer
+              {t('specialty')}
             </TextEffect>
           </div>
           <div className="mt-4 flex items-center justify-start space-x-3">
@@ -139,18 +140,18 @@ export default function Home() {
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
+                      {job.title[locale]}
                     </h4>
                     <p className="text-zinc-500 dark:text-zinc-400">
-                      {job.company}
+                      {job.company[locale]}
                     </p>
                   </div>
                   <div className="flex-col items-end hidden sm:flex">
                     <p className="text-zinc-600 dark:text-zinc-400">
-                      {job.start} - {job.end}
+                      {job.start[locale]} - {job.end[locale]}
                     </p>
                     <p className="text-zinc-600 dark:text-zinc-400">
-                      {job.location}
+                      {job.location[locale]}
                     </p>
                   </div>
                 </div>
@@ -182,19 +183,19 @@ export default function Home() {
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
-                      {university.degree}
+                      {university.degree[locale]}
                     </h4>
                     <p className="text-zinc-500 dark:text-zinc-400">
-                      {university.name}
+                      {university.name[locale]}
                     </p>
                   </div>
 
                   <div className="flex-col items-end hidden sm:flex">
                     <p className="text-zinc-600 dark:text-zinc-400">
-                      {university.start} - {university.end}
+                      {university.start[locale]} - {university.end[locale]}
                     </p>
                     <p className="text-zinc-600 dark:text-zinc-400">
-                      {university.location}
+                      {university.location[locale]}
                     </p>
                   </div>
                 </div>
@@ -208,7 +209,7 @@ export default function Home() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Projects</h3>
+        <h3 className="mb-5 text-lg font-medium">{t('headerProjects')}</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
@@ -235,7 +236,7 @@ export default function Home() {
           className="mt-8 font-base group relative inline-block font-[450] text-zinc-600 dark:text-zinc-50"
           href="/projects"
         >
-          See all projects →
+          {t('allProjects')} →
           <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
         </Link>
       </motion.section>
@@ -244,7 +245,7 @@ export default function Home() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Skills</h3>
+        <h3 className="mb-3 text-lg font-medium">{t('headerSkills')}</h3>
         <MagneticSkills />
       </motion.section>
     </motion.main>
