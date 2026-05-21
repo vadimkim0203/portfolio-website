@@ -28,12 +28,11 @@ interface LanguageContextType {
 const translations: Translations = {
   en: {
     name: 'Vadim Kim',
-    specialty: 'Frontend Engineer',
-    greetings: 'Hi there!',
-    introduction: `I'm Vadim — a frontend developer with a background in retail and B2B
-            services. I’m experienced in understanding user needs, solving
-            real-world problems, and building practical, user-friendly
-            solutions. My main tools are TypeScript, Next.js, and Tailwind CSS.`,
+    specialty:
+      'B2B & Retail Operations | Software Engineering & Data Structures Enthusiast',
+    greetings: 'Hello!',
+    introduction: `I'm Vadim and my experience lies in overseas B2B sales and retail operations with a background in international business development and customer relationship management. 
+    Currently working in the beauty industry, supporting global partnerships, market expansion, and go-to-market operations. Skilled at understanding customers’ needs, coordinating with different partners, and delivering practical solutions. Also interested in software engineering and digital solutions that improve business efficiency and user experience.`,
     headerWork: 'Work Experience',
     headerEducation: 'Education',
     headerProjects: 'Projects',
@@ -46,11 +45,11 @@ const translations: Translations = {
   },
   ko: {
     name: '김바딤',
-    specialty: '프론트엔드 개발자',
+    specialty:
+      'B2B 및 리테일 운영 전문가 | 소프트웨어 엔지니어링 및 자료구조에 관심',
     greetings: '안녕하세요!',
-    introduction: `저는 리테일 및 B2B 서비스 분야에서의 경력을 바탕으로 한 프론트엔드 개발자 Vadim입니다.
-사용자 요구를 정확히 파악하고, 실질적인 문제를 해결하며, 실용적이고 사용자 중심적인 솔루션을 구축하는 데 강점을 가지고 있습니다.
-주요 사용 기술은 TypeScript, Next.js, Tailwind CSS입니다.`,
+    introduction: `안녕하세요, 저는 김바딤입니다. 해외 B2B 영업 및 리테일 운영 분야에서 경험을 쌓아왔습니다. 국제 비즈니스 개발과 고객 관계 관리를 기반으로 다양한 업무를 수행해왔습니다.
+현재는 뷰티 산업에서 근무하며 글로벌 파트너십, 시장 확장, 그리고 Go-to-Market 운영을 지원하고 있습니다. 고객의 니즈를 이해하고 다양한 파트너와 협업하며 실질적인 솔루션을 제공하는 데 강점이 있습니다. 또한 비즈니스 효율성과 사용자 경험을 향상시키는 소프트웨어 엔지니어링과 디지털 솔루션에도 관심을 가지고 있습니다.`,
     headerWork: '경력 사항',
     headerEducation: '학력 사항',
     headerProjects: '프로젝트',

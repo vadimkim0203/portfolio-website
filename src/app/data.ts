@@ -83,26 +83,26 @@ export const PROJECTS: Project[] = [
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: {
-      en: 'ThinkStorm',
-      ko: 'ThinkStorm',
+      en: 'Oceanstore',
+      ko: 'Oceanstore',
     },
     title: {
-      en: 'Frontend engineer',
-      ko: '프론트엔드 개발자',
+      en: 'Account manager / Developer',
+      ko: '영업 매니저 / 개발자',
     },
     location: {
       en: 'Seoul, South Korea',
       ko: '서울, 대한민국',
     },
     start: {
-      en: 'Mar. 2025',
-      ko: '2025년 3월',
+      en: 'Nov. 2024',
+      ko: '2024년 11월',
     },
     end: {
-      en: 'Present',
-      ko: '현재',
+      en: 'Aug. 2025',
+      ko: '2025년 08월',
     },
-    link: 'https://thinkstorm.app/',
+    link: 'https://oceanstore.kr',
     id: 'work4',
   },
   {
@@ -331,4 +331,4 @@ export const SKILLS: Skill[] = [
   },
 ];
 
-export const EMAIL = 'vadim.kim0203@gmail.com';
+export const EMAIL = 'vkim0203@gmail.com';
