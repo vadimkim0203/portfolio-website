@@ -12,6 +12,8 @@ import Link from 'next/link';
 import MagneticSocialLink from '@/components/MagneticSocialLink';
 import MagneticSkills from '@/components/MagneticSkills';
 import { useLanguage } from '@/context/LanguageContext';
+import { useState } from 'react';
+import { parseDescription } from '@/lib/parseDescription';
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -60,6 +62,11 @@ function ProjectVideo({ src }: ProjectVideoProps) {
 
 export default function Home() {
   const { t, locale } = useLanguage();
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  const toggleExpand = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <motion.main
@@ -78,7 +85,7 @@ export default function Home() {
               <Image
                 src="/images/avatar.jpg"
                 alt="Profile photo"
-                className="w-full h-full object-cover rounded-full bg-gray-100 grayscale hover:grayscale-0 sm:float-right"
+                className="w-full h-full object-cover object-top rounded-full bg-gray-100 grayscale hover:grayscale-0 sm:float-right"
                 unoptimized
                 width={160}
                 height={160}
@@ -125,11 +132,9 @@ export default function Home() {
         <h3 className="mb-5 text-lg font-medium">{t('headerWork')}</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
-            <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => toggleExpand(job.id)}
+              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30 text-left w-full hover:bg-zinc-300/50 dark:hover:bg-zinc-600/50 transition-colors"
               key={job.id}
             >
               <Spotlight
@@ -137,8 +142,8 @@ export default function Home() {
                 size={64}
               />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row justify-between">
-                  <div>
+                <div className="relative flex w-full flex-row justify-between items-center">
+                  <div className="flex-1">
                     <h4 className="font-normal dark:text-zinc-100">
                       {job.title[locale]}
                     </h4>
@@ -154,9 +159,48 @@ export default function Home() {
                       {job.location[locale]}
                     </p>
                   </div>
+                  <div className="ml-4 text-zinc-600 dark:text-zinc-400 transition-transform">
+                    <svg
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        expandedId === job.id ? 'rotate-180' : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                      />
+                    </svg>
+                  </div>
                 </div>
+
+                {expandedId === job.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800"
+                  >
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                      {parseDescription(job.description[locale])}
+                    </p>
+                    <a
+                      href={job.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-3 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-zinc-50 transition-colors"
+                    >
+                      Visit Company →
+                    </a>
+                  </motion.div>
+                )}
               </div>
-            </a>
+            </button>
           ))}
         </div>
       </motion.section>
