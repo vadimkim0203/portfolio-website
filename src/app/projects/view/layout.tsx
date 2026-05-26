@@ -2,6 +2,7 @@
 import { TextMorph } from "@/components/ui/text-morph";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 function CopyButton() {
   const [text, setText] = useState("Copy");
