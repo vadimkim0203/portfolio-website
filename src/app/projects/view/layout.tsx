@@ -2,6 +2,8 @@
 import { TextMorph } from "@/components/ui/text-morph";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 function CopyButton() {
   const [text, setText] = useState("Copy");
@@ -33,6 +35,15 @@ export default function LayoutBlogPost({
 }: {
   children: React.ReactNode;
 }) {
+  const { t } = useLanguage();
+
+  const TABS = [
+    { nameKey: 'navigation.home', link: '/' },
+    { nameKey: 'navigation.projects', link: '/projects' },
+    { nameKey: 'navigation.activities', link: '/activities' },
+    { nameKey: 'navigation.contact', link: '/contact' },
+  ];
+
   return (
     <>
       <div className="pointer-events-none fixed left-0 top-0 z-10 h-12 w-full bg-gray-100 to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-zinc-950" />
@@ -46,6 +57,19 @@ export default function LayoutBlogPost({
       <div className="absolute right-4 top-24 onhover:opacity-100">
         <CopyButton />
       </div>
+
+      <nav className="fixed top-5 left-4 right-4 z-20 sm:hidden flex items-center gap-2">
+        {TABS.map((tab, index) => (
+          <Link
+            href={tab.link}
+            key={index}
+            className="px-2 py-0.5 text-xs text-zinc-600 transition-colors duration-300 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+          >
+            {t(tab.nameKey)}
+          </Link>
+        ))}
+      </nav>
+
       <main className="prose prose-gray mt-24 pb-20 prose-h4:prose-base dark:prose-invert prose-h1:text-xl prose-h1:font-medium prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-lg prose-h2:font-medium prose-h3:text-base prose-h3:font-medium prose-h4:font-medium prose-h5:text-base prose-h5:font-medium prose-h6:text-base prose-h6:font-medium prose-strong:font-medium">
         {children}
       </main>
