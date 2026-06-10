@@ -59,6 +59,13 @@ type PatentPost = {
   uid: string;
 };
 
+type Activity = {
+  title: string;
+  description: string;
+  images: string[];
+  uid: string;
+};
+
 export type Skill = {
   name: string;
   slug: string;
@@ -319,6 +326,21 @@ export const BLOG_POSTS: BlogPost[] = [
     description: 'Intellectual support for charitable foundations.',
     link: 'https://procharity.ru/',
     uid: 'blog-1',
+  },
+];
+
+export const ACTIVITY_LIST: Activity[] = [
+  {
+    title: 'Uniqlo Manager Candidate Program Photo Shoot',
+    description: 'Took part in Uniqlo photo shoot session for Uniqlo manager candidate program',
+    images: [
+      '/images/uniqlo1.jpeg',
+      '/images/uniqlo2.jpeg',
+      '/images/uniqlo3.jpeg',
+      '/images/uniqlo4.jpeg',
+      '/images/uniqlo5.jpeg',
+    ],
+    uid: 'activity-1',
   },
 ];
 

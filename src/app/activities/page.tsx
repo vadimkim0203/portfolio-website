@@ -3,8 +3,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { AnimatedBackground } from '@/components/ui/animated-background';
-import { PUBLICATION_LIST } from '@/app/data';
+import { PUBLICATION_LIST, ACTIVITY_LIST } from '@/app/data';
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -25,7 +24,29 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 };
 
+const ACTIVITY_ROUTES: Record<string, string> = {
+  'activity-1': '/activities/uniqlo',
+  'publication-1': '/activities/codeseoul',
+  'publication-2': '/activities/supabase',
+};
+
 export default function Activities() {
+  // Combine all activities
+  const allActivities = [
+    ...ACTIVITY_LIST.map((activity) => ({
+      ...activity,
+      type: 'photo',
+      href: ACTIVITY_ROUTES[activity.uid],
+    })),
+    ...PUBLICATION_LIST.map((publication) => ({
+      uid: publication.uid,
+      title: publication.title,
+      description: publication.title,
+      type: 'publication',
+      href: ACTIVITY_ROUTES[publication.uid],
+    })),
+  ];
+
   return (
     <motion.main
       className="space-y-24"
@@ -38,41 +59,23 @@ export default function Activities() {
         transition={TRANSITION_SECTION}
       >
         <h3 className="mb-3 text-lg font-medium pt-6">Activities</h3>
-        <div className="flex flex-col space-y-0">
-          <AnimatedBackground
-            enableHover
-            className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
-            transition={{
-              type: 'spring',
-              bounce: 0,
-              duration: 0.2,
-            }}
-          >
-            {PUBLICATION_LIST.map((publication) => (
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                key={publication.uid}
-                className="-mx-3 rounded-xl px-3 py-3"
-                href={publication.link}
-                data-id={publication.uid}
-              >
-                <div className="flex flex-col space-y-1">
-                  <h4 className="font-normal dark:text-zinc-100">
-                    {publication.title
-                      .split(/(K\. Vadim)/)
-                      .map((part, index) =>
-                        part === 'K. Vadim' ? (
-                          <strong key={index}>{part}</strong>
-                        ) : (
-                          part
-                        ),
-                      )}
-                  </h4>
-                </div>
-              </Link>
-            ))}
-          </AnimatedBackground>
+        <div className="flex flex-col space-y-3">
+          {allActivities.map((activity) => (
+            <Link
+              key={activity.uid}
+              href={activity.href}
+              className="rounded-lg bg-zinc-100 dark:bg-zinc-900/80 p-6 hover:bg-zinc-200 dark:hover:bg-zinc-800/80 transition-colors duration-200"
+            >
+              <div className="flex flex-col space-y-1">
+                <h4 className="text-base font-medium dark:text-zinc-100">
+                  {activity.title}
+                </h4>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  {activity.description !== activity.title ? activity.description : ''}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </motion.section>
     </motion.main>

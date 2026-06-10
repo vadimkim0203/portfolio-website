@@ -25,7 +25,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Vadim Kim - CV',
   description:
-    "Explore Vadim Kim's portfolio and CV. Passionate about clean code, UI design, and building modern web applications.",
+    "Explore Vadim Kim's portfolio and CV. Passionate about Data Structures, Industrial Design, Beauty and Fashion.",
+  icons: '/images/avatar.jpg',
 };
 
 export default function RootLayout({
