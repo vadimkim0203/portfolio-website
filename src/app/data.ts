@@ -69,6 +69,7 @@ type Activity = {
 export type Skill = {
   name: string;
   slug: string;
+  icon?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -370,6 +371,12 @@ export const ACTIVITY_LIST: Activity[] = [
     ],
     uid: 'activity-1',
   },
+  {
+    title: 'Amos Professional Workshop',
+    description: 'Participated in Amos Professional Workshop where we discussed development plans for the next fiscal year. Key focus areas included strategic marketing plans for entering new European and Asian markets, identifying emerging market opportunities, and optimizing budget allocation for regional expansion initiatives.',
+    images: ['/images/amosWorkshop.png'],
+    uid: 'activity-2',
+  },
 ];
 
 export const PUBLICATION_LIST: PublicationPost[] = [
@@ -463,6 +470,36 @@ export const SKILLS: Skill[] = [
   {
     name: 'redux',
     slug: 'redux',
+  },
+  {
+    name: 'Russian',
+    slug: 'russian',
+    icon: '/icons/russian.svg',
+  },
+  {
+    name: 'English',
+    slug: 'english',
+    icon: '/icons/english.svg',
+  },
+  {
+    name: 'Korean',
+    slug: 'korean',
+    icon: '/icons/korean.svg',
+  },
+  {
+    name: 'P&L Simulation',
+    slug: 'p-l-simulation',
+    icon: '/icons/p-l-simulation.svg',
+  },
+  {
+    name: 'Sales & Stock Analysis',
+    slug: 'sales-stock-analysis',
+    icon: '/icons/sales-stock-analysis.svg',
+  },
+  {
+    name: 'Trends Spotting',
+    slug: 'trends-spotting',
+    icon: '/icons/trends-spotting.svg',
   },
 ];
 
