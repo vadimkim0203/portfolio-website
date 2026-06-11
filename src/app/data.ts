@@ -187,8 +187,36 @@ Workflow Automation: Applying a passion for optimization and data-structures to 
       ko: '2024년 10월',
     },
     description: {
-      en: 'Drove overseas B2B sales strategy for Korean beauty brand. Established partnerships with distributors, managed order processing, and expanded market presence in multiple countries.',
-      ko: 'K-뷰티 브랜드의 해외 B2B 영업 전략을 주도했습니다. 유통업체와의 파트너십을 구축하고 주문 처리를 관리하며 여러 국가에서 시장 점유율을 확대했습니다.',
+      en: `Drove overseas B2B sales strategy for Korean beauty brand with focus on expanding international market presence.
+
+Sales Performance:
+- Achieved 100% gains of regional margin sales profits in Middle East region (U.A.E., Saudi Arabia)
+- Generated 10% of total margin profits after the first fiscal year
+
+Strategic Partnerships:
+Developed partnerships with leading global cosmetic retailers including Watsons (Turkey and Singapore), Sephora (UK), and Gold Apple (Qatar).
+
+Global B2B Network:
+Managed B2B partnerships of various scales worldwide including Skinsider (UK), Know to Glow (Sweden), Dermaspace (Denmark), and Senti Senti (US).
+
+Additional Initiatives:
+- Influence Marketing coordination
+- InterCHARM Korea Exhibitor`,
+      ko: `K-뷰티 브랜드의 해외 B2B 영업 전략을 주도하며 국제 시장 확대에 주력했습니다.
+
+판매 성과:
+- 중동 지역(U.A.E., 사우디아라비아)의 지역 마진 판매 이익에서 100% 증가 달성
+- 첫 회계년도 이후 총 마진 이익의 10% 기여
+
+전략적 파트너십:
+Watsons(터키 및 싱가포르), Sephora(영국), Gold Apple(카타르)를 포함한 주요 글로벌 화장품 소매업체와 파트너십 구축
+
+글로벌 B2B 네트워크:
+Skinsider(영국), Know to Glow(스웨덴), Dermaspace(덴마크), Senti Senti(미국) 등 다양한 규모의 B2B 파트너십 관리
+
+추가 이니셔티브:
+- 인플루언서 마케팅 조율
+- InterCHARM Korea 참전`,
     },
     link: 'https://purito.com/',
     id: 'work3',
@@ -318,7 +346,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Building an E-Commerce B2B Korean Apparel platform',
     description:
       'Building a platform for connecting international buyers all around the world.',
-    link: 'https://www.oceanstore.kr/en',
+    link: 'https://www.oceanstore.kr',
     uid: 'blog-2',
   },
   {
