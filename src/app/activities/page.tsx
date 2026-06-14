@@ -27,6 +27,7 @@ const TRANSITION_SECTION = {
 const ACTIVITY_ROUTES: Record<string, string> = {
   'activity-1': '/activities/uniqlo',
   'activity-2': '/activities/amos-workshop',
+  'activity-3': '/activities/mongolia-field-trip',
   'publication-1': '/activities/codeseoul',
   'publication-2': '/activities/supabase',
 };

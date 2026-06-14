@@ -64,6 +64,7 @@ type Activity = {
   description: string;
   images: string[];
   uid: string;
+  link?: string;
 };
 
 export type Skill = {
@@ -96,8 +97,8 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       ko: '아모레퍼시픽',
     },
     title: {
-      en: 'Account Manager',
-      ko: '영업 매니저',
+      en: 'Key Account Manager',
+      ko: 'B2B 해외 영업 매니저',
     },
     location: {
       en: 'Seoul, South Korea',
@@ -144,8 +145,8 @@ Workflow Automation: Applying a passion for optimization and data-structures to 
       ko: 'Oceanstore',
     },
     title: {
-      en: 'Account Manager / Developer',
-      ko: '영업 매니저 / 개발자',
+      en: 'Key Account Manager / Developer',
+      ko: 'B2B 해외 영업 매니저 / 개발자',
     },
     location: {
       en: 'Seoul, South Korea',
@@ -228,15 +229,15 @@ Skinsider(영국), Know to Glow(스웨덴), Dermaspace(덴마크), Senti Senti(�
       ko: '(주)딘소',
     },
     title: {
-      en: 'Export Manager',
-      ko: '수출 매니저',
+      en: 'Key Account Manager',
+      ko: 'B2B 해외 영업 매니저',
     },
     location: { en: 'Seoul, South Korea', ko: '서울, 대한민국' },
     start: { en: 'Jun. 2023', ko: '2023년 6월' },
     end: { en: 'Nov. 2023', ko: '2023년 11월' },
     description: {
-      en: 'Managed export operations and international shipping logistics. Coordinated with customs departments, managed supplier relationships, and ensured timely delivery of goods to overseas clients.',
-      ko: '수출 운영 및 국제 배송 물류를 관리했습니다. 세관 부서와 협력하고 공급자 관계를 관리하며 해외 고객에게 제때 납품을 보장했습니다.',
+      en: "As an exclusive distributor of Manyo brand I helped to identify and secure 30% of new customers, expanding the company's client base across the world and contributing to revenue growth. Integrated Bitrix24 CRM system. Managed the process of integration, resulting in a 15% reduction in order processing. Improved the out-of-stock ratio by 15%.",
+      ko: 'Manyo 브랜드의 독점 유통업체로서 30%의 신규 고객을 확보하고 전 세계 기업 고객층을 확장하여 매출 성장에 기여했습니다. Bitrix24 CRM 시스템을 통합했으며, 통합 프로세스를 관리하여 주문 처리 시간을 15% 단축했습니다. 재고 부족 비율을 15% 개선했습니다.',
     },
     link: 'https://dinsokorea.com/',
     id: 'work2',
@@ -361,7 +362,8 @@ export const BLOG_POSTS: BlogPost[] = [
 export const ACTIVITY_LIST: Activity[] = [
   {
     title: 'Uniqlo Manager Candidate Program Photo Shoot',
-    description: 'Took part in Uniqlo photo shoot session for Uniqlo manager candidate program',
+    description:
+      'Took part in Uniqlo photo shoot session for Uniqlo manager candidate program',
     images: [
       '/images/uniqlo1.jpeg',
       '/images/uniqlo2.jpeg',
@@ -373,9 +375,24 @@ export const ACTIVITY_LIST: Activity[] = [
   },
   {
     title: 'Amos Professional Workshop',
-    description: 'Participated in Amos Professional Workshop where we discussed development plans for the next fiscal year. Key focus areas included strategic marketing plans for entering new European and Asian markets, identifying emerging market opportunities, and optimizing budget allocation for regional expansion initiatives.',
+    description:
+      'Participated in Amos Professional Workshop where we discussed development plans for the next fiscal year. Key focus areas included strategic marketing plans for entering new European and Asian markets, identifying emerging market opportunities, and optimizing budget allocation for regional expansion initiatives.',
     images: ['/images/amosWorkshop.png'],
     uid: 'activity-2',
+  },
+  {
+    title:
+      'Field Trip with Mongolian Partners to Amorepacific Factory and Botanical Garden',
+    description:
+      "Organized a visit with Mongolian business partners to Amorepacific's facilities in Asan, including the factory, headquarters, and botanical garden. Explored the company's production processes, innovative technologies, and sustainable practices. Learned how natural ingredients are cultivated and selected from the botanical garden before being used in product development, while also discussing potential partnership opportunities.",
+    images: [
+      '/images/Mongolia1.jpg',
+      '/images/Mongolia2.jpg',
+      '/images/Mongolia3.jpg',
+      '/images/Mongolia4.jpg',
+    ],
+    uid: 'activity-3',
+    link: 'https://www.instagram.com/p/DXUS0O5zV4Q/',
   },
 ];
 
@@ -412,66 +429,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const SKILLS: Skill[] = [
   {
-    name: 'JavaScript',
-    slug: 'js',
-  },
-  {
-    name: 'TypeScript',
-    slug: 'typescript',
-  },
-  {
-    name: 'React',
-    slug: 'react',
-  },
-  {
-    name: 'NextJS',
-    slug: 'nextjs',
-  },
-  {
-    name: 'TailwindCSS',
-    slug: 'tailwindcss',
-  },
-  {
-    name: 'Git',
-    slug: 'git',
-  },
-  {
-    name: 'shadCN',
-    slug: 'shadcnui',
-  },
-  {
-    name: 'Framer',
-    slug: 'framer',
-  },
-  {
-    name: 'AWS EC2',
-    slug: 'aws',
-  },
-  {
-    name: 'Supabase',
-    slug: 'supabase',
-  },
-  {
-    name: 'Docker',
-    slug: 'docker',
-  },
-  {
-    name: 'Tanstack Query',
-    slug: 'reactquery',
-  },
-  {
-    name: 'i18n',
-    slug: 'i18next',
-  },
-  {
-    name: 'vercel',
-    slug: 'vercel',
-  },
-  {
-    name: 'redux',
-    slug: 'redux',
-  },
-  {
     name: 'Russian',
     slug: 'russian',
     icon: '/icons/russian.svg',
@@ -500,6 +457,46 @@ export const SKILLS: Skill[] = [
     name: 'Trends Spotting',
     slug: 'trends-spotting',
     icon: '/icons/trends-spotting.svg',
+  },
+  {
+    name: 'TypeScript',
+    slug: 'typescript',
+  },
+  {
+    name: 'NextJS',
+    slug: 'nextjs',
+  },
+  {
+    name: 'TailwindCSS',
+    slug: 'tailwindcss',
+  },
+  {
+    name: 'AWS EC2',
+    slug: 'aws',
+  },
+  {
+    name: 'Supabase',
+    slug: 'supabase',
+  },
+  {
+    name: 'Docker',
+    slug: 'docker',
+  },
+  {
+    name: 'Tanstack Query',
+    slug: 'reactquery',
+  },
+  {
+    name: 'redux',
+    slug: 'redux',
+  },
+  {
+    name: 'Railway',
+    slug: 'railway',
+  },
+  {
+    name: 'NestJS',
+    slug: 'nestjs',
   },
 ];
 
