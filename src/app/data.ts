@@ -161,7 +161,7 @@ Workflow Automation: Applying a passion for optimization and data-structures to 
       ko: '2025년 08월',
     },
     description: {
-      en: 'Managed B2B sales operations and developed full-stack solutions for e-commerce platform. Coordinated with international clients and implemented feature improvements using React and Node.js.',
+      en: 'Managed B2B sales operations and developed full-stack solutions for e-commerce platform. Coordinated with international clients and implemented feature improvements using NextJS and NestJS.',
       ko: 'B2B 판매 운영을 관리하고 전자상거래 플랫폼을 위한 전체 스택 솔루션을 개발했습니다. 국제 클라이언트와 협력하고 React 및 Node.js를 사용하여 기능 개선을 구현했습니다.',
     },
     link: 'https://oceanstore.kr',
